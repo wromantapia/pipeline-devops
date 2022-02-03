@@ -14,6 +14,22 @@ def call(){
         stages {
             stage("Pipeline"){
                 steps {
+                    script{
+                        if($GIT_BRANCH.contains("feature"))
+                            //case 'Maven':
+                                //def ejecucion = load 'maven.groovy'
+                                //ejecucion.call()
+                                echo "GRADLE********"
+                                gradle.call()
+                            //break;
+                            //case 'Gradle':
+                                //def ejecucion = load 'gradle.groovy'
+                                //ejecucion.call()
+                                //echo "MAVEN********"
+                                //maven.call();
+                            //break;
+                        }
+                    }
                     sh "echo 'Hola mundo. Job:${JOB_NAME} - Branch:${env.GIT_BRANCH} - Commit:${GIT_COMMIT}'"
                 }
                 post{
