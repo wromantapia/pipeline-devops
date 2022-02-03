@@ -26,7 +26,7 @@ def call(){
                             //break;
                         }
 
-                        if(env.GIT_BRANCH.contains("release"))
+                        if(env.GIT_BRANCH.contains("develop"))
                         {
                             echo "MAVEN********"
                             maven.call()
