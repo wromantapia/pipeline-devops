@@ -24,12 +24,13 @@ def call(){
                                 echo "GRADLE********"
                                 gradle.call()
                             //break;
-                            //case 'Gradle':
-                                //def ejecucion = load 'gradle.groovy'
-                                //ejecucion.call()
-                                //echo "MAVEN********"
-                                //maven.call();
-                            //break;
+                        }
+
+                        if(env.GIT_BRANCH.contains("release"))
+                        {
+                            echo "MAVEN********"
+                            maven.call()
+
                         }
                     }
                     sh "echo 'Hola mundo. Job:${JOB_NAME} - Branch:${env.GIT_BRANCH} - Commit:${GIT_COMMIT}'"
