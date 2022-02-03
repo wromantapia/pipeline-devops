@@ -10,12 +10,13 @@ def call(){
         environment {
             NEXUS_USER         = credentials('user-nexus')
             NEXUS_PASSWORD     = credentials('password-nexus')
+            
         }
         stages {
             stage("Pipeline"){
                 steps {
                     script{
-                        if($GIT_BRANCH.contains("feature"))
+                        if(${env.GIT_BRANCH}.contains("feature"))
                         {
                             //case 'Maven':
                                 //def ejecucion = load 'maven.groovy'
