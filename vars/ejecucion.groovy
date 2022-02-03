@@ -16,6 +16,7 @@ def call(){
                 steps {
                     script{
                         if($GIT_BRANCH.contains("feature"))
+                        {
                             //case 'Maven':
                                 //def ejecucion = load 'maven.groovy'
                                 //ejecucion.call()
