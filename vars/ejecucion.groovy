@@ -16,7 +16,7 @@ def call(){
             stage("Pipeline"){
                 steps {
                     script{
-                        if(${env.GIT_BRANCH}.contains("feature"))
+                        if(env.GIT_BRANCH.contains("feature"))
                         {
                             //case 'Maven':
                                 //def ejecucion = load 'maven.groovy'
